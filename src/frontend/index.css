@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Deep navy academic palette */
+    --background: 0.97 0.008 240;
+    --foreground: 0.18 0.04 255;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 255;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 255;
+
+    /* Deep navy primary */
+    --primary: 0.28 0.08 255;
+    --primary-foreground: 0.98 0 0;
+
+    /* Light blue-grey secondary */
+    --secondary: 0.93 0.018 240;
+    --secondary-foreground: 0.28 0.08 255;
+
+    --muted: 0.93 0.012 240;
+    --muted-foreground: 0.5 0.03 255;
+
+    /* Gold accent */
+    --accent: 0.78 0.14 75;
+    --accent-foreground: 0.15 0.04 255;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.02 240;
+    --input: 0.88 0.02 240;
+    --ring: 0.28 0.08 255;
+
+    /* Success for good attendance */
+    --success: 0.55 0.16 145;
+    --success-foreground: 0.98 0 0;
+
+    /* Warning for low attendance */
+    --warning: 0.72 0.18 50;
+    --warning-foreground: 0.15 0 0;
+
+    --chart-1: 0.28 0.08 255;
+    --chart-2: 0.78 0.14 75;
+    --chart-3: 0.55 0.16 145;
+    --chart-4: 0.577 0.245 27.325;
+    --chart-5: 0.6 0.12 200;
+
+    --sidebar: 0.18 0.06 255;
+    --sidebar-foreground: 0.92 0.02 240;
+    --sidebar-primary: 0.78 0.14 75;
+    --sidebar-primary-foreground: 0.15 0.04 255;
+    --sidebar-accent: 0.28 0.07 255;
+    --sidebar-accent-foreground: 0.92 0.02 240;
+    --sidebar-border: 0.32 0.06 255;
+    --sidebar-ring: 0.78 0.14 75;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Outfit", sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+
+  .font-body {
+    font-family: "Outfit", sans-serif;
+  }
+
+  .text-success {
+    color: oklch(var(--success));
+  }
+
+  .bg-success {
+    background-color: oklch(var(--success));
+  }
+
+  .text-success-foreground {
+    color: oklch(var(--success-foreground));
+  }
+
+  .text-warning {
+    color: oklch(var(--warning));
+  }
+
+  .bg-warning {
+    background-color: oklch(var(--warning));
+  }
+
+  .bg-warning\/10 {
+    background-color: oklch(var(--warning) / 0.1);
+  }
+
+  .bg-destructive\/10 {
+    background-color: oklch(var(--destructive) / 0.1);
+  }
+
+  .text-destructive-dark {
+    color: oklch(0.45 0.18 27.325);
+  }
+
+  .nav-link-active {
+    background-color: oklch(var(--sidebar-accent));
+    color: oklch(var(--sidebar-accent-foreground));
+  }
+
+  .attendance-low {
+    background-color: oklch(var(--destructive) / 0.08);
+    color: oklch(0.45 0.18 27.325);
+  }
+
+  .attendance-good {
+    color: oklch(0.45 0.14 145);
+  }
+}
